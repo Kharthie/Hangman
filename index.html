@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .myDiv {
+        margin: 10px;
+        width: 753px;
+        height: 22px;
+        border: 1px solid black;
+    }
+</style>
+<img id="myImage" src="img1.png" style="width:90px"><br><br>
+
+<body>
+    <div class="myDiv">
+        <button id="a" value="a" onclick="getValueFromButton('a')">A</button>
+        <button id="b" value="b" onclick="getValueFromButton('b')">B</button>
+        <button id="c" value="c" onclick="getValueFromButton('c')">C</button>
+        <button id="d" value="d" onclick="getValueFromButton('d')">D</button>
+        <button id="e" value="e" onclick="getValueFromButton('e')">E</button>
+        <button id="f" value="f" onclick="getValueFromButton('f')">F</button>
+        <button id="g" value="g" onclick="getValueFromButton('g')">G</button>
+        <button id="h" value="h" onclick="getValueFromButton('h')">H</button>
+        <button id="i" value="i" onclick="getValueFromButton('i')">I</button>
+        <button id="j" value="j" onclick="getValueFromButton('j')">J</button>
+        <button id="k" value="k" onclick="getValueFromButton('k')">K</button>
+        <button id="l" value="l" onclick="getValueFromButton('l')">L</button>
+        <button id="m" value="m" onclick="getValueFromButton('m')">M</button>
+        <button id="n" value="n" onclick="getValueFromButton('n')">N</button>
+        <button id="o" value="o" onclick="getValueFromButton('o')">O</button>
+        <button id="p" value="p" onclick="getValueFromButton('p')">P</button>
+        <button id="q" value="q" onclick="getValueFromButton('q')">Q</button>
+        <button id="r" value="r" onclick="getValueFromButton('r')">R</button>
+        <button id="s" value="s" onclick="getValueFromButton('s')">S</button>
+        <button id="t" value="t" onclick="getValueFromButton('t')">T</button>
+        <button id="u" value="u" onclick="getValueFromButton('u')">U</button>
+        <button id="v" value="v" onclick="getValueFromButton('v')">V</button>
+        <button id="w" value="w" onclick="getValueFromButton('w')">W</button>
+        <button id="x" value="x" onclick="getValueFromButton('x')">X</button>
+        <button id="y" value="y" onclick="getValueFromButton('y')">Y</button>
+        <button id="z" value="z" onclick="getValueFromButton('z')">Z</button>
+    </div>
+
+    <body>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <button type="button" onclick="myFunction()">NEXT</button>
+    </body>
+    <script>
+        var a = "_ ";
+        var words;
+        var display = [];
+        var countWrongClicks = 0;
+        function myFunction() {
+            display = []
+            var word = ["computer", "board", "html", "word", "jscript", "python", "nodejs", "react", "main", "length"];
+            words = word[Math.floor(Math.random() * word.length)];
+            document.getElementById("demo3").innerHTML = a.repeat(words.length)
+        }
+        function getValueFromButton(val) {
+
+            var x = document.getElementById(val).value;
+            if (words.includes(x)) {
+                var wordPositon = words.indexOf(x);
+                display[wordPositon] = x;
+                document.getElementById("demo2").innerHTML = display;
+            }
+            else {
+                countWrongClicks = countWrongClicks + 1;
+                switch (countWrongClicks) {
+                    case 1:
+                        document.getElementById("myImage").src = "img1.png"
+                        break;
+                    case 2:
+                        document.getElementById("myImage").src = "img2.png"
+                        break;
+                    case 3:
+                        document.getElementById("myImage").src = "img3.png"
+                        break;
+                    case 4:
+                        document.getElementById("myImage").src = "img4.png"
+                        break;
+                    case 5:
+                        document.getElementById("myImage").src = "img5.png"
+                        break;
+                    case 6:
+                        document.getElementById("myImage").src = "img6.png"
+                        break;
+                    case 7:
+                        document.getElementById("myImage").src = "img7.png"
+                        break;
+
+                    default:
+                        { document.getElementById("myImage").src = "img8.png" }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
